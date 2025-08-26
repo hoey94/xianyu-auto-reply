@@ -2726,7 +2726,7 @@ const channelTypeConfigs = {
     },
     webhook: {
     title: 'Webhook通知',
-    description: '通过HTTP POST请求发送通知到自定义的Webhook地址',
+    description: '通过HTTP请求发送通知到自定义的Webhook地址',
     icon: 'bi-link-45deg',
     color: 'warning',
     fields: [
@@ -2744,7 +2744,8 @@ const channelTypeConfigs = {
         type: 'select',
         options: [
             { value: 'POST', text: 'POST' },
-            { value: 'PUT', text: 'PUT' }
+            { value: 'PUT', text: 'PUT' },
+            { value: 'GET', text: 'GET' }
         ],
         required: true,
         help: '发送请求使用的HTTP方法'
