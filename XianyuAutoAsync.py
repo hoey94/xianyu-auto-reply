@@ -2249,6 +2249,12 @@ class XianyuLive:
                             logger.info(f"Webhook通知发送成功")
                         else:
                             logger.warning(f"Webhook通知发送失败: {response.status}")
+                elif http_method == 'GET':
+                    async with session.get(webhook_url, params=data, headers=headers, timeout=10) as response:
+                        if response.status == 200:
+                            logger.info(f"Webhook通知发送成功")
+                        else:
+                            logger.warning(f"Webhook通知发送失败: {response.status}")
                 else:
                     logger.warning(f"不支持的HTTP方法: {http_method}")
 
